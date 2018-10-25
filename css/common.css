@@ -1,0 +1,10 @@
+*{
+    font-family: "Microsoft YaHei UI";
+    color: #333;
+}
+html,body,div.mui-content{
+    background: #ffffff;
+}
+p{
+    margin: 0;
+}

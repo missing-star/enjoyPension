@@ -1,0 +1,10 @@
+.mui-bar-nav{
+    box-shadow: none;
+    background: #ffffff;
+}
+a{
+    color: #333;
+}
+div#app {
+    padding: 84px 15px;
+}
