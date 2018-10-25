@@ -8,3 +8,22 @@ html,body,div.mui-content{
 p{
     margin: 0;
 }
+/* 使用webkit内核的浏览器 */
+::-webkit-input-placeholder{
+    color: #c8c7cc;
+}
+/* Firefox版本4-18 */
+:-moz-placeholder{
+    color: #c8c7cc;
+
+}
+/* Firefox版本19+ */
+::-moz-placeholder{
+    color: #c8c7cc;
+
+}
+/* IE浏览器 */
+:-ms-input-placeholder{
+    color: #c8c7cc;
+
+}

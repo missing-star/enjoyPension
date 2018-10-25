@@ -15,13 +15,17 @@
     <h3>绑定手机号</h3>
     <section>
         <div class="mui-input-group">
-            <input type="text" maxlength="11" placeholder="请输入手机号"/>
-            <input type="text" maxlength="11" placeholder="请输入短信验证码"/>
+            <div class="mui-input-row">
+                <input type="text" maxlength="11" placeholder="请输入手机号"/>
+            </div>
+            <div class="mui-input-row">
+                <input type="text" maxlength="6" placeholder="请输入短信验证码"/>
+            </div>
         </div>
     </section>
     <footer>
-        <a href="javascript:;" class="mui-btn mui-btn-block">确认绑定</a>
-        <a href="javascript:;" class="mui-btn mui-btn-block">跳过绑定，下一步</a>
+        <a href="javascript:;" class="mui-btn mui-btn-block mui-confirm" :class="{'disabled':hasCode}">确认绑定</a>
+        <a href="javascript:;" class="mui-btn mui-btn-block mui-skip">跳过绑定，下一步</a>
     </footer>
 </div>
 <script type="text/javascript" src="js/bind-phone.js"></script>

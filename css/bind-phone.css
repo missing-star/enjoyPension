@@ -8,3 +8,37 @@ a{
 div#app {
     padding: 84px 15px;
 }
+div.mui-input-group:before,div.mui-input-group:after{
+    background-color: transparent;
+}
+.mui-input-group {
+    padding: 2rem 0;
+}
+.mui-input-group .mui-input-row{
+    height: 60px;
+}
+input{
+    height: 60px !important;
+}
+.mui-btn, button, input[type=button], input[type=reset], input[type=submit]{
+    line-height: 1;
+    margin-bottom: 20px;
+}
+.mui-btn-block{
+    width: 90%;
+}
+footer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    padding: 40px 0;
+}
+.disabled{
+    color: #ffffff;
+    background: #cccccc;
+}
