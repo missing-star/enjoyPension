@@ -1,4 +1,8 @@
 /**
+ * 添加title
+ */
+document.querySelector('title').innerHTML = '乐养老';
+/**
  * 添加meta标签
  */
 let metaNode = document.createElement('meta');
