@@ -16,16 +16,23 @@
     <section>
         <div class="mui-input-group">
             <div class="mui-input-row">
-                <input type="text" maxlength="11" placeholder="请输入手机号"/>
+                <input v-model="phone" @paste="validatePhone" @input="validatePhone" type="number" maxlength="11" placeholder="请输入手机号"/>
+                <span v-if="clearPhone" @click="clearPhoneFun" class="mui-icon-clear-phone">
+                    <i class="mui-icon mui-icon-close"></i>
+                </span>
             </div>
             <div class="mui-input-row">
-                <input type="text" maxlength="6" placeholder="请输入短信验证码"/>
+                <input v-model="code" @paste="validateCOde" @input="validateCOde" type="number" maxlength="6" placeholder="请输入短信验证码"/>
+                <span v-if="clearCode" @click="clearCodeFun" class="mui-icon-clear-code">
+                    <i class="mui-icon mui-icon-close"></i>
+                </span>
+                <button type="button" @click="sendPhoneCode" class="send-code-btn">{{sendCodeContent}}</button>
             </div>
         </div>
     </section>
     <footer>
-        <a href="javascript:;" class="mui-btn mui-btn-block mui-confirm" :class="{'disabled':hasCode}">确认绑定</a>
-        <a href="javascript:;" class="mui-btn mui-btn-block mui-skip">跳过绑定，下一步</a>
+        <button @click="goBindPhone" class="mui-btn mui-btn-block mui-confirm" :class="{'disabled':!hasCode}">确认绑定</button>
+        <button @click="skipBindPhone" class="mui-btn mui-btn-block mui-skip">跳过绑定，下一步</button>
     </footer>
 </div>
 <script type="text/javascript" src="js/bind-phone.js"></script>

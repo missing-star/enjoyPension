@@ -26,6 +26,9 @@ input{
 }
 .mui-btn-block{
     width: 90%;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
 }
 footer {
     display: flex;
@@ -38,7 +41,37 @@ footer {
     -webkit-justify-content: center;
     padding: 40px 0;
 }
-.disabled{
+button.send-code-btn{
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    height: 30px;
+}
+button.mui-confirm{
+    background: rgba(245,171,0,1);
+    color: #ffffff;
+    border: none;
+}
+button.disabled{
     color: #ffffff;
     background: #cccccc;
+}
+button.mui-skip{
+    border-color: rgba(245,171,0,1);
+    color: rgba(245,171,0,1);
+}
+
+span.mui-icon-clear-phone {
+    position: absolute;
+    top: 30%;
+    right: 15px;
+    color: #cccccc;
+    font-size: 1.2rem;
+}
+span.mui-icon-clear-code {
+    position: absolute;
+    top: 30%;
+    right: 120px;
+    color: #cccccc;
+    font-size: 1.2rem;
 }
