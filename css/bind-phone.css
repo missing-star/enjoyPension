@@ -1,3 +1,6 @@
+html,body,div.mui-content{
+    height: 100%;
+}
 .mui-bar-nav{
     box-shadow: none;
     background: #ffffff;
