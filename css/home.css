@@ -2,6 +2,9 @@ div.mui-search-container{
     display: flex;
     display: -webkit-flex;
     justify-content: space-around;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
     padding:10px 15px;
 }
 div.mui-search-container input {
@@ -11,11 +14,12 @@ div.mui-search-container input {
     font-size: 0.5rem;
     background: rgba(242,242,242,1);
     border: none;
+    padding-left: 2rem;
 }
 div.mui-search-container button{
     height: 30px;
     width: 50px;
-    color: rgba(245,171,0,1);
+    color: #f5ab00;
     font-weight: 500;
     border: none;
 }
@@ -27,6 +31,8 @@ img{
     white-space: nowrap;
     width: 100%;
     overflow: scroll;
+    background: #FFFFFF;
+    z-index: 999;
 }
 
 .tab-container::-webkit-scrollbar {/*滚动条整体样式*/
@@ -45,19 +51,23 @@ a.tab-item{
     font-size: 0.8rem;
 }
 a.tab-item.active{
-    color: rgba(245,171,0,1);
+    color: #f5ab00;
 }
 a.tab-item.active:after {
     content: '';
     width: 50%;
     height: 2px;
-    background: rgba(245,171,0,1);
+    background: #f5ab00;
     position: relative;
     top: 4px;
 }
-.tab-content.active {
+.tab-content {
+    display: none;
     background: rgba(246,245,251,1);
     padding: 10px 15px;
+}
+.tab-content.active {
+    display: block;
 }
 .tab-content-item {
     border-radius: 8px;
@@ -104,4 +114,43 @@ p.class-label-name {
     position: absolute;
     top: 22%;
     width: 100%;
+}
+/*header{*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*background: #FFFFFF;*/
+    /*z-index: 999;*/
+/*}*/
+nav.mui-bar {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+#tab-container.fixed{
+    position: fixed;
+    top: 0;
+    margin-bottom: 40px;
+}
+div.tab-content.over-scroll.fixed{
+    overflow: scroll;
+    position: absolute;
+    top: 40px;
+}
+img.icon-search {
+    position: absolute;
+    width: 0.8rem;
+    left: 1.5rem;
+}
+.img-container {
+    position: relative;
+}
+p.comments-and-times {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.5);
+    color: #FFFFFF;
+    padding: 2px 15px;
+    border-radius: 12px 0 0 0;
 }

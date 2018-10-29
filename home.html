@@ -10,7 +10,8 @@
 <div id="app">
     <header>
         <div class="mui-search-container">
-            <input type="text" placeholder="请输入您搜索的关键词"/>
+            <img src="img/home/icon-search.png" class="icon-search">
+            <input @focus="showSearch()" type="text" placeholder="请输入您搜索的关键词"/>
             <button>搜索</button>
         </div>
     </header>
@@ -24,33 +25,50 @@
         <!--
             选项卡
         -->
-        <div class="tab-container">
-            <template v-for="n in 15">
-                <a @click="loadTabContent" v-if="n == 1" href="javascript:;" class="tab-item active">推荐</a>
-                <a @click="loadTabContent" v-else href="javascript:;" class="tab-item">推荐</a>
+        <div id="tab-container" class="tab-container">
+            <template v-for="(item,index) in tabList">
+                <a @click="loadTabContent(item.id,index)" href="javascript:;" class="tab-item" :class="{active:index == activeIndex}">{{item.name}}</a>
             </template>
         </div>
         <!--
             选项卡内容
         -->
-        <div class="tab-content active">
-            <div v-for="n in 5" class="tab-content-item">
-                <div class="class-label">
-                    <img src="img/home/label.png"/>
-                    <p class="class-label-name">分类</p>
+        <div class="tab-content" :class="{active:index == activeIndex}" v-for="(tab,index) in tabList">
+            <div v-for="item in tabContent.get(tab.id)" class="tab-content-item">
+                <div class="img-container">
+                    <div class="class-label">
+                        <img src="img/home/label.png"/>
+                        <p class="class-label-name">{{item.label}}</p>
+                    </div>
+                    <img :src="item.img"/>
+                    <p class="comments-and-times">{{item.times}}浏览 &#8226; {{item.comments}}评论</p>
                 </div>
-                <img src="img/show.jpg"/>
                 <div class="tab-content-desc">
-                    <p class="tab-content-desc-title">标题xxxxxxxxxxxxxxxxxxxxxxxxx</p>
-                    <p class="tab-content-desc-content">内容xxxxxxxxxxxxxxxxxxxxx</p>
-                    <p class="tab-content-desc-date">日期xxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                    <p class="tab-content-desc-title">{{item.title}}</p>
+                    <p class="tab-content-desc-content">{{item.content}}</p>
+                    <p class="tab-content-desc-date">{{item.date}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <footer>
-
-    </footer>
+    <!--
+       描述：底部导航栏
+    -->
+    <nav class="mui-bar mui-bar-tab">
+        <a class="mui-tab-item active" href="index.html">
+            <img src="img/course-active.png"/>
+            <span class="mui-tab-label">课程</span>
+        </a>
+        <a class="mui-tab-item" href="shoppingCart.html">
+            <img src="img/discovery.png"/>
+            <span class="mui-tab-label">发现</span>
+        </a>
+        <a class="mui-tab-item" href="personHome.html">
+            <img src="img/my.png"/>
+            <span class="mui-tab-label">我的</span>
+        </a>
+    </nav>
+    <span style="display: none;">{{tabContentTracker}}</span>
 </div>
 <script type="text/javascript" src="js/home.js"></script>
 </body>

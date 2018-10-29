@@ -51,7 +51,7 @@ button.send-code-btn{
     height: 30px;
 }
 button.mui-confirm{
-    background: rgba(245,171,0,1);
+    background: #f5ab00;
     color: #ffffff;
     border: none;
 }
@@ -60,8 +60,8 @@ button.disabled{
     background: #cccccc;
 }
 button.mui-skip{
-    border-color: rgba(245,171,0,1);
-    color: rgba(245,171,0,1);
+    border-color: #f5ab00;
+    color: #f5ab00;
 }
 
 span.mui-icon-clear-phone {
@@ -151,7 +151,7 @@ button.mui-btn[data-id=btn-cancel],.mui-poppicker-btn-cancel{
 button.mui-btn[data-id=btn-ok],.mui-poppicker-btn-ok{
     font-size: 1rem;
     background: #ffffff;
-    color: rgba(245,171,0,1);
+    color: #f5ab00;
     border: none;
 }
 .mui-dtpicker-title {

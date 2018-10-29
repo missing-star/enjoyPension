@@ -27,3 +27,25 @@ p{
     color: #c8c7cc;
 
 }
+.mui-tab-item img{
+    padding-top: 5px;
+    width: 20px;
+    margin: auto;
+}
+.mui-bar-tab .mui-tab-item span{
+    color: #cccccc;
+    font-size: 0.8rem;
+}
+.mui-bar-tab .mui-tab-item.active span{
+    color: #f5ab00;
+    font-size: 0.8rem;
+}
+nav.mui-bar.mui-bar-tab {
+    background: #FFFFFF;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.mui-content {
+    padding-bottom: 50px;
+}
