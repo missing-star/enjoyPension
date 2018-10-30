@@ -8,33 +8,97 @@
 </head>
 <body>
 <div id="app">
-    <header>
-        <div class="mui-search-container">
-            <img src="img/home/icon-search.png" class="icon-search">
-            <input @focus="showSearch()" type="text" placeholder="请输入您搜索的关键词"/>
-            <button>搜索</button>
+    <div id="page1" class="page" :class="{active:currentPage == 1}">
+        <header>
+            <div class="mui-search-container">
+                <img src="img/home/icon-search.png" class="icon-search">
+                <input readonly @focus="showSearch()" type="text" placeholder="请输入您搜索的关键词"/>
+                <button disabled>搜索</button>
+            </div>
+        </header>
+        <div class="mui-content">
+            <!--
+                图片
+            -->
+            <div class="img-container">
+                <img src="img/show.jpg"/>
+            </div>
+            <!--
+                选项卡
+            -->
+            <div id="tab-container" class="tab-container">
+                <template v-for="(item,index) in tabList">
+                    <a @click="loadTabContent(item.id,index)" href="javascript:;" class="tab-item" :class="{active:index == activeIndex}">{{item.name}}</a>
+                </template>
+            </div>
+            <!--
+                选项卡内容
+            -->
+            <div class="tab-content" :class="{active:index == activeIndex}" v-for="(tab,index) in tabList">
+                <div v-for="item in tabContent.get(tab.id)" class="tab-content-item">
+                    <div class="img-container">
+                        <div class="class-label">
+                            <img src="img/home/label.png"/>
+                            <p class="class-label-name">{{item.label}}</p>
+                        </div>
+                        <img :src="item.img"/>
+                        <p class="comments-and-times">{{item.times}}浏览 &#8226; {{item.comments}}评论</p>
+                    </div>
+                    <div class="tab-content-desc">
+                        <p class="tab-content-desc-title">{{item.title}}</p>
+                        <p class="tab-content-desc-content">{{item.content}}</p>
+                        <p class="tab-content-desc-date">{{item.date}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
-    <div class="mui-content">
         <!--
-            图片
+           描述：底部导航栏
         -->
-        <div class="img-container">
-            <img src="img/show.jpg"/>
+        <nav class="mui-bar mui-bar-tab">
+            <a class="mui-tab-item active" href="index.html">
+                <img src="img/course-active.png"/>
+                <span class="mui-tab-label">课程</span>
+            </a>
+            <a class="mui-tab-item" href="shoppingCart.html">
+                <img src="img/discovery.png"/>
+                <span class="mui-tab-label">发现</span>
+            </a>
+            <a class="mui-tab-item" href="personHome.html">
+                <img src="img/my.png"/>
+                <span class="mui-tab-label">我的</span>
+            </a>
+        </nav>
+        <span style="display: none;">{{tabContentTracker}}</span>
+    </div>
+    <div id="page2" class="page" :class="{active:currentPage == 2}">
+        <header>
+            <div class="mui-search-container">
+                <img @click="goBack" src="img/home/icon_backblack@3x.png" class="back-icon"/>
+                <img src="img/home/icon-search.png" class="icon-search">
+                <input @focus="showHistory()" id="search-keys" type="text" v-model="searchKeys" placeholder="请输入您搜索的关键词"/>
+                <button type="button" @click="searchContent()">搜索</button>
+            </div>
+        </header>
+        <!--历史搜索记录-->
+        <div class="history-record-container search-section" :class="{active:isInput}">
+            <div class="history-record">
+                <div class="history-title">
+                    <img class="history-record-img" src="img/home/icon_search_history@3x.png"/>
+                    <p class="history-record-tips">历史记录</p>
+                </div>
+                <div @click="clearHistory()" class="history-clear">
+                    <img class="history-record-img" src="img/home/icon_search_trash@3x.png"/>
+                    <span class="history-clear-btn">清除</span>
+                </div>
+            </div>
+            <div class="history-record-show">
+                <p @click="searchContent(item)" v-for="item in historyList" class="history-record-item">{{item}}</p>
+            </div>
         </div>
-        <!--
-            选项卡
-        -->
-        <div id="tab-container" class="tab-container">
-            <template v-for="(item,index) in tabList">
-                <a @click="loadTabContent(item.id,index)" href="javascript:;" class="tab-item" :class="{active:index == activeIndex}">{{item.name}}</a>
-            </template>
-        </div>
-        <!--
-            选项卡内容
-        -->
-        <div class="tab-content" :class="{active:index == activeIndex}" v-for="(tab,index) in tabList">
-            <div v-for="item in tabContent.get(tab.id)" class="tab-content-item">
+        <!--搜索内容展示-->
+        <div class="search-content-container search-section" :class="{active:!isInput}">
+            <div v-for="item in searchList" class="tab-content-item">
                 <div class="img-container">
                     <div class="class-label">
                         <img src="img/home/label.png"/>
@@ -51,24 +115,6 @@
             </div>
         </div>
     </div>
-    <!--
-       描述：底部导航栏
-    -->
-    <nav class="mui-bar mui-bar-tab">
-        <a class="mui-tab-item active" href="index.html">
-            <img src="img/course-active.png"/>
-            <span class="mui-tab-label">课程</span>
-        </a>
-        <a class="mui-tab-item" href="shoppingCart.html">
-            <img src="img/discovery.png"/>
-            <span class="mui-tab-label">发现</span>
-        </a>
-        <a class="mui-tab-item" href="personHome.html">
-            <img src="img/my.png"/>
-            <span class="mui-tab-label">我的</span>
-        </a>
-    </nav>
-    <span style="display: none;">{{tabContentTracker}}</span>
 </div>
 <script type="text/javascript" src="js/home.js"></script>
 </body>

@@ -1,4 +1,5 @@
 window.onload = function () {
+    let set = new Set(JSON.parse(localStorage.getItem('history')));
     let app = new Vue({
         el: '#app',
         data: {
@@ -27,9 +28,51 @@ window.onload = function () {
                     name: '活动'
                 }
             ],
+            //搜索返回的结果
+            searchList:[
+                {
+                    "id": 0,
+                    "img": "img/show.jpg",
+                    "label": "养生",
+                    "title": "这是标题",
+                    "content": "这是内容",
+                    "date": "2018-02-25",
+                    "times":2000,
+                    "comments":100
+                },
+                {
+                    "id": 1,
+                    "img": "img/show.jpg",
+                    "label": "养生",
+                    "title": "这是标题",
+                    "content": "这是内容",
+                    "date": "2018-02-25",
+                    "times":2000,
+                    "comments":100
+                },
+                {
+                    "id": 2,
+                    "img": "img/show.jpg",
+                    "label": "养生",
+                    "title": "这是标题",
+                    "content": "这是内容",
+                    "date": "2018-02-25",
+                    "times":2000,
+                    "comments":100
+                }
+            ],
+            //tab页内容
             tabContent: new Map(),
             //手动改变值变化
-            tabContentTracker: 0
+            tabContentTracker: 0,
+            //历史记录
+            historyList:Array.from(set),
+            //搜索的关键字
+            searchKeys:'',
+            //显示的页面标记
+            currentPage:1,
+            //显示历史记录还是搜索内容
+            isInput:true
         },
         methods: {
             loadTabContent: function (tabId, index) {
@@ -51,7 +94,41 @@ window.onload = function () {
                 }
             },
             showSearch:function () {
-
+                //显示搜索页面
+                this.currentPage = 2;
+                setTimeout(function () {
+                    document.getElementById('search-keys').focus();
+                },100);
+            },
+            //返回首页
+            goBack:function() {
+                this.isInput = false;
+                this.currentPage = 1;
+                this.searchKeys = '';
+            },
+            //清除历史记录
+            clearHistory:function () {
+                localStorage.clear();
+                app.historyList = JSON.parse(localStorage.getItem('history'));
+                set.clear();
+            },
+            //立即搜索
+            searchContent:function (content) {
+                if(content) {
+                    this.searchKeys = content;
+                }
+                //改变显示状态
+                this.isInput = false;
+                if(this.searchKeys.trim() != '') {
+                    set.add(this.searchKeys);
+                    localStorage.setItem('history',JSON.stringify(Array.from(set)));
+                    app.historyList = Array.from(set);
+                }
+            },
+            //显示历史记录
+            showHistory:function () {
+                //改变显示状态
+                this.isInput = true;
             }
         },
         created: function () {
