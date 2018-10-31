@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/loader.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/course-hour-detail-video.css"/>
+</head>
+<body>
+<div id="app" class="mui-content">
+    <!--
+        顶部视频
+    -->
+    <header>
+        <img src="img/course-detail/icon_backwhite@3x.png" class="back-icon-white"/>
+        <video @click="showBtnGroup" id="video-player" class="video-player" src="http://180.97.241.21/6773D97AE0F40819B5D0AC5BC7/03000A02005BD910DDCCFD8139CD4C9937D88A-86EE-46FE-A437-E868F9C678E5.mp4?ccode=0502&duration=393&expire=18000&psid=12a1e4c135192a4ff039fac06bb888ae&ups_client_netip=3141f63b&ups_ts=1540981127&ups_userid=&utid=9003FCsCihkCAbRm923Su%2FKS&vid=XMzg5NjE2MjAzMg&vkey=A6bdcd8a86cfbafd4602a998748ea4125&sp=">
+            您的浏览器不支持 video 标签。
+        </video>
+        <div class="btn-group-play">
+            <img @click="startPlay" src="img/course-hour-detail/play@3x.png" class="video-play video-toggle" :class="{active:!isPlay}">
+            <img @click="pausePlay" src="img/course-hour-detail/stop@3x.png" class="video-stop video-toggle" :class="{active:isPlay}">
+        </div>
+        <div class="video-progress-bar-container">
+            <span class="played-time">{{currentTime}}</span>
+            <div id="video-progress-bar" class="mui-progressbar">
+                <span></span>
+            </div>
+            <span class="all-time">{{videoTotalTime}}</span>
+            <img @click="fullScreen" src="img/course-hour-detail/full-screen.png" class="video-full-screen">
+        </div>
+    </header>
+    <!--
+        课时介绍
+    -->
+    <div class="class-hour-desc">
+        <div class="class-hour-desc-title">
+            <span class="title-number">01</span>
+            <p class="title-name">广场舞16步</p>
+        </div>
+        <div class="class-hour-album">
+            <img src="img/course-detail/logo.jpg" class="album-logo"/>
+            <p class="album-desc">
+                <span class="album-title">中老年广场舞教学</span>
+                <span class="album-date">2018-10-12</span>
+            </p>
+            <p class="go-album">
+                <span class="go-album-title">进入课程</span>
+                <img class="go-album-logo" src="img/course-detail/arrow-right.png">
+            </p>
+        </div>
+        <div class="course-hour-active-introduction">
+            广场那个屋对方考虑到积分开了多久发劳动时间反馈都是飞洒的
+            开发链接发到空间发了肯定撒放家里看电视剧风口浪尖
+        </div>
+        <div class="course-hour-introduction">
+            <p class="course-hour-introduction-title">课时介绍</p>
+            <p class="course-hour-introduction-content">
+                打开就分开巅峰对决斯洛伐克剪短发了肯定撒
+            </p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/course-hour-detail.js"></script>
+</body>
+</html>

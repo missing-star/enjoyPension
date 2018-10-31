@@ -153,7 +153,6 @@ input.comment-input {
     color: #999999;
     background: rgb(246,246,249);
     border: none;
-    opacity: 0.75;
 }
 .mui-content{
     padding-bottom: 60px;
@@ -166,13 +165,18 @@ img.icon-expression.bottom-icon-comment {
     position: absolute;
     top: 2px;
     right: 10px;
-    z-index: -1;
+}
+img.icon-expression.bottom-icon-comment.invisible{
+    display: none;
 }
 .comment-icon-container {
     width: 40%;
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
+}
+.comment-icon-container.invisible{
+    display: none;
 }
 .course-like-container {
     display: flex;
@@ -310,7 +314,7 @@ p.open-all-title {
 }
 
 .course-comments-container {
-    margin-top: 10px;
+    margin-top: 20px;
     background: #ffffff;
     padding: 15px 0;
     position: relative;
@@ -401,4 +405,9 @@ li.course-comments-item {
     justify-content: center;
     color: #999999;
     font-size: 1rem;
+}
+button.comments-send-btn {
+    border: none;
+    color: #f5ab00;
+    padding: 0;
 }

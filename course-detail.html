@@ -163,17 +163,27 @@
     -->
     <footer class="bottom-common">
         <div class="comment-input-container">
-            <input class="comment-input" type="text" placeholder="写下你的评论..."/>
-            <img src="img/course-detail/expression.png" class="icon-expression bottom-icon-comment">
+            <input oninput="this.value=this.value.replace(/\s+/g,'')"
+                   @blur="showSmile"
+                   v-model="commentsContent" @focus="hideSmile"
+                   class="comment-input"
+                   type="text" placeholder="写下你的评论..."/>
+            <img src="img/course-detail/expression.png" :class="{invisible:isFocus}" class="icon-expression bottom-icon-comment">
         </div>
-        <div class="comment-icon-container">
+        <div class="comment-icon-container" :class="{invisible:isFocus}">
             <img src="img/course-detail/comment.png" class="icon-comment bottom-icon-comment"/>
             <img src="img/course-detail/like.png" class="icon-like bottom-icon-comment"/>
             <img src="img/course-detail/like-active.png" class="icon-like active bottom-icon-comment">
             <img src="img/course-detail/share.png" class="icon-share bottom-icon-comment"/>
         </div>
+        <div class="comment-icon-container" :class="{invisible:!isFocus}">
+            <img src="img/course-detail/expression.png" class="bottom-icon-comment">
+            <img src="img/course-detail/upload-img.png" @click="uploadImg" class="bottom-icon-comment"/>
+            <input type="file" hidden id="upload-img" accept="image/*" mutiple="mutiple" />
+            <button type="button" class="comments-send-btn" :disabled="isDisabled">发布</button>
+        </div>
     </footer>
 </div>
-<script src="js/course-detail.js" type="text/javascript"></script>
+<script src="js/course-detail-video.js" type="text/javascript"></script>
 </body>
 </html>
