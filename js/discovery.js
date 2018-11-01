@@ -139,12 +139,10 @@ window.onload = function () {
         let scroll_top = $(document).scrollTop();
         //防止重复设置高度页面抖动
         if (scroll_top > offset_top) {
-            console.log('add');
             // 到达顶部位置，动态的添加元素属性，并给元素添加相应的元素样式
             document.getElementById("tab-container").classList.add("fixed");
         }
         else {
-            console.log('remove');
             // 同理，把之前添加的元素移除即可
             document.getElementById("tab-container").classList.remove("fixed");
         }
