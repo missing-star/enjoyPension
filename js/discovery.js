@@ -13,19 +13,11 @@ window.onload = function () {
                 },
                 {
                     id: 1,
-                    name: '运动'
+                    name: '资讯'
                 },
                 {
                     id: 2,
-                    name: '心理'
-                },
-                {
-                    id: 3,
-                    name: '养生'
-                },
-                {
-                    id: 4,
-                    name: '活动'
+                    name: '日常'
                 }
             ],
             //搜索返回的结果

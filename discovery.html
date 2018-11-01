@@ -5,6 +5,8 @@
     <title></title>
     <script type="text/javascript" src="js/loader.js"></script>
     <link rel="stylesheet" href="css/home.css"/>
+    <link rel="stylesheet" href="css/discovery.css"/>
+    <script type="text/javascript" src="js/discovery.js"></script>
 </head>
 <body>
 <div id="app">
@@ -36,15 +38,23 @@
             -->
             <div class="tab-content" :class="{active:index == activeIndex}" v-for="(tab,index) in tabList">
                 <div v-for="item in tabContent.get(tab.id)" class="tab-content-item">
-                    <div class="img-container">
-                        <div class="class-label">
-                            <img src="img/home/label.png"/>
-                            <p class="class-label-name">{{item.label}}</p>
+                    <template v-if="item.type != 2">
+                        <!--非纯文字-->
+                        <div class="img-container">
+                            <div class="class-label">
+                                <img src="img/home/label.png"/>
+                                <p class="class-label-name">{{item.label}}</p>
+                            </div>
+                            <template v-if="item.type == 1">
+                                <!--视频图标-->
+                                <img src="img/course-hour-detail/play@3x.png" class="icon-video-play">
+                            </template>
+                            <img :src="item.img"/>
+                            <p class="comments-and-times">{{item.times}}浏览 &#8226; {{item.comments}}评论</p>
                         </div>
-                        <img :src="item.img"/>
-                        <p class="comments-and-times">{{item.times}}浏览 &#8226; {{item.comments}}评论</p>
-                    </div>
+                    </template>
                     <div class="tab-content-desc">
+                        <p v-if="item.type == 2" class="comments-and-times">{{item.times}}浏览 &#8226; {{item.comments}}评论</p>
                         <p class="tab-content-desc-title">{{item.title}}</p>
                         <p class="tab-content-desc-content">{{item.content}}</p>
                         <p class="tab-content-desc-date">{{item.date}}</p>
@@ -56,12 +66,12 @@
            描述：底部导航栏
         -->
         <nav class="mui-bar mui-bar-tab">
-            <a class="mui-tab-item active" href="javascript:;" onclick="openWindow('home.html')">
-                <img src="img/course-active.png"/>
+            <a class="mui-tab-item" href="javascript:;" onclick="openWindow('home.html')">
+                <img src="img/course.png"/>
                 <span class="mui-tab-label">课程</span>
             </a>
-            <a class="mui-tab-item"  href="javascript:;" onclick="openWindow('discovery.html')">
-                <img src="img/discovery.png"/>
+            <a class="mui-tab-item active" href="javascript:;" onclick="openWindow('home.html')">
+                <img src="img/discovery-active.png"/>
                 <span class="mui-tab-label">发现</span>
             </a>
             <a class="mui-tab-item" href="javascript:;" onclick="openWindow('home.html')">
@@ -116,6 +126,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>

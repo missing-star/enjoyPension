@@ -13,12 +13,12 @@
     -->
     <header>
         <img src="img/course-detail/icon_backwhite@3x.png" class="back-icon-white"/>
-        <video @click="showBtnGroup" id="video-player" class="video-player" src="http://180.97.241.21/6773D97AE0F40819B5D0AC5BC7/03000A02005BD910DDCCFD8139CD4C9937D88A-86EE-46FE-A437-E868F9C678E5.mp4?ccode=0502&duration=393&expire=18000&psid=12a1e4c135192a4ff039fac06bb888ae&ups_client_netip=3141f63b&ups_ts=1540981127&ups_userid=&utid=9003FCsCihkCAbRm923Su%2FKS&vid=XMzg5NjE2MjAzMg&vkey=A6bdcd8a86cfbafd4602a998748ea4125&sp=">
+        <video @click="showBtnGroup" id="video-player" class="video-player" src="http://www.w3school.com.cn/i/movie.ogg">
             您的浏览器不支持 video 标签。
         </video>
         <div class="btn-group-play">
-            <img @click="startPlay" src="img/course-hour-detail/play@3x.png" class="video-play video-toggle" :class="{active:!isPlay}">
-            <img @click="pausePlay" src="img/course-hour-detail/stop@3x.png" class="video-stop video-toggle" :class="{active:isPlay}">
+            <img @click="startPlay()" src="img/course-hour-detail/play@3x.png" class="video-play video-toggle" :class="{active:!isPlay}">
+            <img @click="pausePlay()" src="img/course-hour-detail/stop@3x.png" class="video-stop video-toggle" :class="{active:isPlay}">
         </div>
         <div class="video-progress-bar-container">
             <span class="played-time">{{currentTime}}</span>
@@ -60,6 +60,6 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/course-hour-detail.js"></script>
+<script type="text/javascript" src="js/course-hour-detail-video.js"></script>
 </body>
 </html>

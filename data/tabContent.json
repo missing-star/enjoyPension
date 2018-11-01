@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "type":0,
     "img": "img/show.jpg",
     "label": "养生",
     "title": "这是标题",
@@ -11,6 +12,7 @@
   },
   {
     "id": 1,
+    "type":1,
     "img": "img/show.jpg",
     "label": "养生",
     "title": "这是标题",
@@ -21,6 +23,7 @@
   },
   {
     "id": 2,
+    "type":2,
     "img": "img/show.jpg",
     "label": "养生",
     "title": "这是标题",

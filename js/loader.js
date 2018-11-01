@@ -38,3 +38,8 @@ jsList.forEach(function (src, index) {
     jsNode.type = 'text/javascript';
     document.querySelector('head').appendChild(jsNode);
 });
+
+
+function openWindow(url) {
+    window.location.href = url;
+}
