@@ -68,7 +68,7 @@ a.tab-item.active:after {
 }
 .tab-content {
     display: none;
-    background: rgba(246,245,251,1);
+    background:rgba(246,246,249,1);
     padding: 10px 15px;
 }
 .tab-content.active {
@@ -194,7 +194,7 @@ p.history-record-tips{
 }
 div#page2{
     height: 100%;
-    background: rgb(246,246,249);
+    background:rgba(246,246,249,1);
 }
 p.history-record-item {
     display: inline-block;

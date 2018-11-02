@@ -11,7 +11,7 @@ metaNode.content = 'width=device-width,initial-scale=1.0,user-scalable=no,maximu
 document.querySelector('head').appendChild(metaNode);
 let jsList = [
     'assets/jquery/jquery-3.3.1.min.js',
-    'assets/mui/js/mui.min.js',
+    'assets/mui/js/mui.min.js?version=1.0',
     'assets/vue/vue.min.js'
 ];
 
@@ -37,6 +37,17 @@ jsList.forEach(function (src, index) {
     jsNode.src = src;
     jsNode.type = 'text/javascript';
     document.querySelector('head').appendChild(jsNode);
+    if(jsNode.src.indexOf('version') != -1) {
+        jsNode.onload = function () {
+            mui('body').on('tap','a.mui-tab-item',function () {
+                if(this.href != 'javascript:;') {
+                    mui.openWindow({
+                        url:this.href
+                    })
+                }
+            })
+        }
+    }
 });
 
 
