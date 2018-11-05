@@ -64,3 +64,6 @@ nav.mui-bar.mui-bar-tab {
 a.mui-tab-item img {
     display: block;
 }
+a.mui-tab-item{
+    touch-action: none;
+}
