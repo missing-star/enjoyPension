@@ -56,6 +56,7 @@ p.user-info-nickname {
     -webkit-align-items: center;
     justify-content: center;
     -webkit-justify-content: center;
+    padding: 5px;
 }
 img.auth-img {
     width: 8px;
