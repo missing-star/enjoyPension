@@ -144,7 +144,9 @@ img.icon-like.bottom-icon-comment{
 img.icon-like.active.bottom-icon-comment {
     display: block;
 }
-input.comment-input {
+article.comment-input {
+    padding-top: 3px;
+    padding-left: 10px;
     padding-right: 50px;
     margin: 0;
     border-radius: 20px;
@@ -410,4 +412,10 @@ button.comments-send-btn {
     border: none;
     color: #f5ab00;
     padding: 0;
+}
+dl#list_emotion{
+    position: fixed;
+    bottom: 60px;
+    background: #FFFFFF;
+    margin: 0;
 }

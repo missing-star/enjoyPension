@@ -34,6 +34,27 @@ let app = new Vue({
         fullScreen: function () {
             requestFullScreen();
         }
+    },
+    mounted: function () {
+        let vm = this;
+        document.getElementById('video-player').addEventListener('loadedmetadata', function () {
+            //视频加载完成
+            vm.videoPlayer = document.getElementById('video-player');
+            vm.videoTotalTime = transformTime(this.duration);
+            vm.currentTime = transformTime(this.currentTime);
+            console.log(this.duration,this.currentTime);
+            let interval = setInterval(function () {
+                if (vm.videoPlayer.currentTime == vm.videoPlayer.duration) {
+                    vm.isPlay = false;
+                    //播放完毕
+                    $(".btn-group-play").show();
+                    $(".video-progress-bar-container").show();
+                }
+                vm.currentTime = transformTime(vm.videoPlayer.currentTime);
+                mui("#video-progress-bar").progressbar({progress: vm.videoPlayer.currentTime / vm.videoPlayer.duration * 100}).show();
+            }, 1000);
+        });
+
     }
 });
 

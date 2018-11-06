@@ -106,6 +106,12 @@ window.onload = function () {
                 this.currentPage = 1;
                 this.searchKeys = '';
             },
+            goInner:function(id) {
+                console.log('abac');
+              mui.openWindow({
+                  url:'course-detail.html'
+              })
+            },
             //清除历史记录
             clearHistory:function () {
                 localStorage.removeItem('history-home');

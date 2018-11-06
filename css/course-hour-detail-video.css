@@ -11,6 +11,7 @@ img.back-icon-white{
     position: absolute;
     top: 15px;
     left: 15px;
+    z-index: 999;
 }
 img.video-play,img.video-stop{
     position: absolute;

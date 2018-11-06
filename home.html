@@ -35,7 +35,7 @@
                 选项卡内容
             -->
             <div class="tab-content" :class="{active:index == activeIndex}" v-for="(tab,index) in tabList">
-                <div v-for="item in tabContent.get(tab.id)" class="tab-content-item">
+                <div @click="goInner(item.id)" v-for="item in tabContent.get(tab.id)" class="tab-content-item">
                     <div class="img-container">
                         <div class="class-label">
                             <img src="img/home/label.png"/>
@@ -98,7 +98,7 @@
         </div>
         <!--搜索内容展示-->
         <div class="search-content-container search-section" :class="{active:!isInput}">
-            <div v-for="item in searchList" class="tab-content-item">
+            <div @click="goInner(item.id)" v-for="item in searchList" class="tab-content-item">
                 <div class="img-container">
                     <div class="class-label">
                         <img src="img/home/label.png"/>
