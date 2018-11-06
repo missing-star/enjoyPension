@@ -1,5 +1,5 @@
 window.onload = function () {
-    let set = new Set(JSON.parse(localStorage.getItem('history')));
+    let set = new Set(JSON.parse(localStorage.getItem('history-discovery')));
     let app = new Vue({
         el: '#app',
         data: {
@@ -100,8 +100,8 @@ window.onload = function () {
             },
             //清除历史记录
             clearHistory:function () {
-                localStorage.clear();
-                app.historyList = JSON.parse(localStorage.getItem('history'));
+                localStorage.removeItem('history-discovery');
+                app.historyList = JSON.parse(localStorage.getItem('history-discovery'));
                 set.clear();
             },
             //立即搜索
@@ -113,7 +113,7 @@ window.onload = function () {
                 this.isInput = false;
                 if(this.searchKeys.trim() != '') {
                     set.add(this.searchKeys);
-                    localStorage.setItem('history',JSON.stringify(Array.from(set)));
+                    localStorage.setItem('history-discovery',JSON.stringify(Array.from(set)));
                     app.historyList = Array.from(set);
                 }
             },
