@@ -1,7 +1,6 @@
 header{
     position: relative;
     background: #000;
-    min-height: 200px;
 }
 video.video-player{
     width: 100%;
