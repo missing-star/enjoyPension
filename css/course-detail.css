@@ -363,6 +363,10 @@ span.user-nickname {
 img.like-comment {
     width: 25px;
     margin-right: 10px;
+    display: none;
+}
+img.like-comment.active{
+    display: block;
 }
 p.user-like-container {
     display: inline-flex;

@@ -53,7 +53,39 @@ window.onload = function () {
             isLikeArt:false,
             likeArtNums:0,
             //课程状态0:可以申请，1：审核中，2：开放
-            courseStatus:0
+            courseStatus:0,
+            commentsList:[
+                {
+                    id:0,
+                    logo:'img/course-detail/logo.jpg',
+                    commenter:'滑小稽',
+                    isLiked:true,
+                    comments:'这是评论吧啦啦啦',
+                    imgs:'<img src="img/show.jpg"/><img src="img/show.jpg"/><img src="img/show.jpg"/>',
+                    time:'2018-02-22',
+                    count:10
+                },
+                {
+                    id:1,
+                    logo:'img/course-detail/logo.jpg',
+                    commenter:'悟净',
+                    isLiked:false,
+                    comments:'这是评论吧啦啦啦',
+                    imgs:'<img src="img/show.jpg"/><img src="img/show.jpg"/><img src="img/show.jpg"/>',
+                    time:'2018-02-22',
+                    count:10
+                },
+                {
+                    id:2,
+                    logo:'img/course-detail/logo.jpg',
+                    commenter:'悟能',
+                    isLiked:false,
+                    comments:'这是评论吧啦啦啦',
+                    imgs:'<img src="img/show.jpg"/><img src="img/show.jpg"/><img src="img/show.jpg"/>',
+                    time:'2018-02-22',
+                    count:10
+                }
+            ]
         },
         methods: {
             //展开列表
@@ -83,7 +115,7 @@ window.onload = function () {
                 history.go(-1);
             },
             //点赞
-            likeComment:function () {
+            likeComment:function (flag) {
                 
             },
             //文章点赞

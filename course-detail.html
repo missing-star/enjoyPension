@@ -139,25 +139,24 @@
             <p class="course-comments-title">课程评论</p>
         </div>
         <ul class="course-comments-list">
-            <li @click="goCommentsDetail()" v-for="n in 5" class="course-comments-item">
+            <li v-for="item in commentsList" class="course-comments-item">
                 <div class="user-info">
                     <p class="user-info-logo-nickname">
-                        <img src="img/course-detail/logo.jpg" class="user-logo"/>
-                        <span class="user-nickname">评论者</span>
+                        <img :src="item.logo" class="user-logo"/>
+                        <span class="user-nickname">{{item.commenter}}</span>
                     </p>
                     <p class="user-like-container">
-                        <img @click="likeComment()" src="img/course-detail/like-comment.png" class="like-comment">
-                        <span>0</span>
+                        <img @click="likeComment(true,item.id)" src="img/course-detail/like-comment.png" class="like-comment" :class="{active:!item.isLiked}">
+                        <img @click="likeComment(false,item.id)" src="img/course-detail/like-comment-active.png" class="like-comment" :class="{active:item.isLiked}">
+                        <span>{{item.count}}</span>
                     </p>
                 </div>
-                <p class="comments-content">
-                    肯德基疯狂夺金对方考虑到积分开了多久发看了电视剧看了房对方考虑决定离开房间打开撒酒疯的开发进度了快速减肥
+                <p @click="goCommentsDetail()"  class="comments-content">
+                    {{item.comments}}
                 </p>
-                <p class="comments-img">
-                    <img v-for="n in 5" src="img/show.jpg"/>
-                </p>
+                <p class="comments-img" v-html="item.imgs"></p>
                 <div class="comments-operation">
-                    <p class="comments-time">刚刚</p>
+                    <p class="comments-time">{{item.time}}</p>
                     <button @click="replay()" type="button" class="reply-comments">回复</button>
                 </div>
             </li>

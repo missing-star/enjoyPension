@@ -107,7 +107,6 @@ window.onload = function () {
                 this.searchKeys = '';
             },
             goInner:function(id) {
-                console.log('abac');
               mui.openWindow({
                   url:'course-detail.html'
               })

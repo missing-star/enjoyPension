@@ -117,6 +117,11 @@ window.onload = function () {
                     app.historyList = Array.from(set);
                 }
             },
+            goInner:function(id) {
+                mui.openWindow({
+                    url:'course-detail.html'
+                })
+            },
             //显示历史记录
             showHistory:function () {
                 //改变显示状态
