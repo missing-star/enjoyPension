@@ -52,7 +52,6 @@ img.code-img,img.business-img{
 }
 img.code-img, img.business-img {
     width: 25%;
-    border-radius: 8px;
 }
 .ad-character {
 	position: relative;

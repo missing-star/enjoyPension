@@ -21,6 +21,16 @@ window.onload = function() {
 	let app = new Vue({
 		el: '#app',
 		data: {},
-		methods: {}
+		methods: {
+            goCourse:function (id) {
+                //进入课程
+                mui.openWindow({
+                    url:'course-detail.html?id='+id
+                })
+            },
+            goBack: function () {
+                history.go(-1);
+            }
+		}
 	});
 };

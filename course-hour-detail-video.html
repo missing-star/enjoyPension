@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0">
     <title>乐养老</title>
     <link rel="stylesheet" href="assets/mui/css/mui.min.css"/>
@@ -11,12 +10,15 @@
 </head>
 <body>
 <div id="app" class="mui-content">
+    <div class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">课时详情</h1>
+    </div>
     <!--
         顶部视频
     -->
     <header>
-        <img src="img/course-detail/icon_backwhite@3x.png" class="back-icon-white"/>
-        <video @click="showBtnGroup" preload="auto" poster="" x5-video-player-fullscreen="true"
+        <video controls controlsList="nodownload" preload="auto" poster="img/show.jpg" x5-video-player-fullscreen="true"
                webkit-playsinline="true"
                x-webkit-airplay="true"
                playsinline="true"
@@ -24,18 +26,7 @@
                id="video-player" class="video-player" src="http://www.w3school.com.cn/i/movie.ogg">
             您的浏览器不支持 video 标签。
         </video>
-        <div class="btn-group-play">
-            <img @click="startPlay()" src="img/course-hour-detail/play@3x.png" class="video-play video-toggle" :class="{active:!isPlay}">
-            <img @click="pausePlay()" src="img/course-hour-detail/stop@3x.png" class="video-stop video-toggle" :class="{active:isPlay}">
-        </div>
-        <div class="video-progress-bar-container">
-            <span class="played-time">{{currentTime}}</span>
-            <div id="video-progress-bar" class="mui-progressbar">
-                <span></span>
-            </div>
-            <span class="all-time">{{videoTotalTime}}</span>
-            <img @click="fullScreen" src="img/course-hour-detail/full-screen.png" class="video-full-screen">
-        </div>
+
     </header>
     <!--
         课时介绍
@@ -45,7 +36,7 @@
             <span class="title-number">01</span>
             <p class="title-name">广场舞16步</p>
         </div>
-        <div class="class-hour-album">
+        <div @click="goCourse()" class="class-hour-album">
             <img src="img/course-detail/logo.jpg" class="album-logo"/>
             <p class="album-desc">
                 <span class="album-title">中老年广场舞教学</span>

@@ -8,6 +8,10 @@
 </head>
 <body>
 <div id="app" class="mui-content">
+    <div class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">课时详情</h1>
+    </div>
     <header>
         <img src="img/show.jpg" class="top-img">
     </header>
@@ -17,7 +21,7 @@
             <span class="title-number">02</span>
             <p class="title-name">太极拳教学</p>
         </div>
-        <div class="class-hour-album">
+        <div @click="goCourse()" class="class-hour-album">
             <img src="img/course-detail/logo.jpg" class="album-logo"/>
             <p class="album-desc">
                 <span class="album-title">太极拳教学</span>

@@ -301,3 +301,18 @@ p.action {
 	color: #999999;
 	margin: 10px 0;
 }
+img.back-icon-white {
+	position: absolute;
+	width: 25px;
+	top: 15px;
+	left: 15px;
+}
+.mui-bar.mui-bar-nav {
+	box-shadow: none;
+}
+a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left {
+	color: #333333;
+}
+header {
+	padding-top: 44px;
+}

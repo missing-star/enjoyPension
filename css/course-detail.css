@@ -144,7 +144,7 @@ img.icon-like.bottom-icon-comment{
 img.icon-like.active.bottom-icon-comment {
     display: block;
 }
-article.comment-input {
+input.comment-input {
     padding-top: 3px;
     padding-left: 10px;
     padding-right: 50px;
@@ -418,4 +418,53 @@ dl#list_emotion{
     bottom: 60px;
     background: #FFFFFF;
     margin: 0;
+}
+.emoji-menu{
+    width: 100% !important;
+    position: fixed !important;
+    bottom: 58px;
+    margin: 0px auto;
+}
+.emoji-picker-icon{
+    top: 7px !important;
+}
+.emoji-wysiwyg-editor.comment-input {
+    padding-top: 8px;
+    padding-left: 6px;
+    margin: 0;
+    border-radius: 20px;
+    height: 30px;
+    font-size: 0.8rem;
+    color: #999999;
+    background: rgb(246,246,249);
+    border: none;
+}
+/*滚动条样式*/
+.emoji-wysiwyg-editor.comment-input::-webkit-scrollbar {/*滚动条整体样式*/
+    width: 0px;     /*高宽分别对应横竖滚动条的尺寸*/
+    height: 0px;
+}
+.emoji-picker-icon.parent-has-scroll{
+    right: 10px !important;
+}
+img.course-like-img{
+    display: none;
+}
+img.course-like-img.active{
+    display: block;
+}
+button.apply-course.checking {
+    background: #BBBBBB;
+}
+button.apply-course{
+    display: none;
+}
+button.apply-course.active{
+    display: block;
+}
+.border-container.border-grey {
+    border-color: #8A8a8a;
+}
+p.course-like-num.border-grey {
+    color: #8a8a8a;
 }
