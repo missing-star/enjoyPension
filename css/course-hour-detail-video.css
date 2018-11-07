@@ -145,6 +145,7 @@ p.course-hour-introduction-content {
 }
 .mui-bar.mui-bar-nav {
     box-shadow: none;
+    background: #FFFFFF;
 }
 a.mui-action-back.mui-icon.mui-icon-left-nav.mui-pull-left {
     color: #333333;

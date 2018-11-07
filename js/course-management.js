@@ -11,7 +11,13 @@ window.onload = function () {
                     $(".tab-content-list").removeClass('active');
                     $(".tab-content-list").eq(index).addClass('active');
                 }
-            }
+            },
+            goCourse:function () {
+                //进入课程
+                mui.openWindow({
+                    url:'course-detail.html'
+                })
+            },
         }
     });
 }

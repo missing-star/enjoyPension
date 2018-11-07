@@ -58,10 +58,19 @@ p.discovery-detail-title {
 }
 img.like-article {
     width: 30px;
+    display: none;
+}
+img.like-article.active{
+    display: block;
+}
+.read-and-like-item.like.active{
+    border-color: #f95859;
 }
 .read-and-like-item.like {
-    border-color: #f95859;
-    color: #f95859;
+    border-color: #999999;
+}
+p.like-num.active{
+    color:#f95859;
 }
 .read-and-like:after {
     content: '';
@@ -216,4 +225,9 @@ header{
     width: 100%;
     border-radius: 10px;
     margin: 10px 0;
+}
+p.like-num {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    color: #999999;
 }

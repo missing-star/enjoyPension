@@ -18,10 +18,18 @@ window.onload = function () {
                 {
                     id: 2,
                     name: '日常'
+                },
+                {
+                    id: 3,
+                    name: '兴趣'
+                },
+                {
+                    id: 4,
+                    name: '科技'
                 }
             ],
             //搜索返回的结果
-            searchList:[
+            searchList: [
                 {
                     "id": 0,
                     "img": "img/show.jpg",
@@ -29,8 +37,8 @@ window.onload = function () {
                     "title": "这是标题",
                     "content": "这是内容",
                     "date": "2018-02-25",
-                    "times":2000,
-                    "comments":100
+                    "times": 2000,
+                    "comments": 100
                 },
                 {
                     "id": 1,
@@ -39,8 +47,8 @@ window.onload = function () {
                     "title": "这是标题",
                     "content": "这是内容",
                     "date": "2018-02-25",
-                    "times":2000,
-                    "comments":100
+                    "times": 2000,
+                    "comments": 100
                 },
                 {
                     "id": 2,
@@ -49,8 +57,8 @@ window.onload = function () {
                     "title": "这是标题",
                     "content": "这是内容",
                     "date": "2018-02-25",
-                    "times":2000,
-                    "comments":100
+                    "times": 2000,
+                    "comments": 100
                 }
             ],
             //tab页内容
@@ -58,13 +66,13 @@ window.onload = function () {
             //手动改变值变化
             tabContentTracker: 0,
             //历史记录
-            historyList:Array.from(set),
+            historyList: Array.from(set),
             //搜索的关键字
-            searchKeys:'',
+            searchKeys: '',
             //显示的页面标记
-            currentPage:1,
+            currentPage: 1,
             //显示历史记录还是搜索内容
-            isInput:true
+            isInput: true
         },
         methods: {
             loadTabContent: function (tabId, index) {
@@ -85,45 +93,45 @@ window.onload = function () {
                     });
                 }
             },
-            showSearch:function () {
+            showSearch: function () {
                 //显示搜索页面
                 this.currentPage = 2;
                 setTimeout(function () {
                     document.getElementById('search-keys').focus();
-                },100);
+                }, 100);
             },
             //返回首页
-            goBack:function() {
+            goBack: function () {
                 this.isInput = false;
                 this.currentPage = 1;
                 this.searchKeys = '';
             },
             //清除历史记录
-            clearHistory:function () {
+            clearHistory: function () {
                 localStorage.removeItem('history-discovery');
                 app.historyList = JSON.parse(localStorage.getItem('history-discovery'));
                 set.clear();
             },
             //立即搜索
-            searchContent:function (content) {
-                if(content) {
+            searchContent: function (content) {
+                if (content) {
                     this.searchKeys = content;
                 }
                 //改变显示状态
                 this.isInput = false;
-                if(this.searchKeys.trim() != '') {
+                if (this.searchKeys.trim() != '') {
                     set.add(this.searchKeys);
-                    localStorage.setItem('history-discovery',JSON.stringify(Array.from(set)));
+                    localStorage.setItem('history-discovery', JSON.stringify(Array.from(set)));
                     app.historyList = Array.from(set);
                 }
             },
-            goInner:function(id) {
+            goInner: function (id) {
                 mui.openWindow({
-                    url:'course-detail.html'
+                    url: 'discovery-detail.html'
                 })
             },
             //显示历史记录
-            showHistory:function () {
+            showHistory: function () {
                 //改变显示状态
                 this.isInput = true;
             }
