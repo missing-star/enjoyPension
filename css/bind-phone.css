@@ -78,3 +78,15 @@ span.mui-icon-clear-code {
     color: #cccccc;
     font-size: 1.2rem;
 }
+img.icon-delete {
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    width: 30px;
+}
+img.icon-delete-code {
+    position: absolute;
+    width: 30px;
+    bottom: 15px;
+    right: 120px;
+}

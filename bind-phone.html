@@ -17,15 +17,11 @@
         <div class="mui-input-group">
             <div class="mui-input-row">
                 <input v-model="phone" @paste="validatePhone" @input="validatePhone" type="number" maxlength="11" placeholder="请输入手机号"/>
-                <span v-if="clearPhone" @click="clearPhoneFun" class="mui-icon-clear-phone">
-                    <i class="mui-icon mui-icon-close"></i>
-                </span>
+                <img v-if="clearPhone" @click="clearPhoneFun" src="img/icon-delete.png" class="icon-delete">
             </div>
             <div class="mui-input-row">
                 <input v-model="code" @paste="validateCOde" @input="validateCOde" type="number" maxlength="6" placeholder="请输入短信验证码"/>
-                <span v-if="clearCode" @click="clearCodeFun" class="mui-icon-clear-code">
-                    <i class="mui-icon mui-icon-close"></i>
-                </span>
+                <img v-if="clearCode" @click="clearCodeFun" src="img/icon-delete.png" class="icon-delete-code">
                 <button type="button" @click="sendPhoneCode" class="send-code-btn">{{sendCodeContent}}</button>
             </div>
         </div>
