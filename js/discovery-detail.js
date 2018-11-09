@@ -1,4 +1,4 @@
-window.onload = function () {
+$(function () {
     let app = new Vue({
             el: '#app',
             data: {
@@ -19,6 +19,8 @@ window.onload = function () {
                 isCollect:false,
                 //上传图片地址数组
                 imgList:[],
+                //是否展示卡片视图
+                isShowCard:false,
                 commentsList:[
                     {
                         id:0,
@@ -92,9 +94,7 @@ window.onload = function () {
                     $('.emoji-wysiwyg-editor').focus();
                 },
                 shareCourse:function() {
-                    mui.openWindow({
-                        url:'share-page.html'
-                    })
+                    mui('#share-sheet').popover('toggle');
                 },
                 //收藏，取消收藏
                 collect:function (flag) {
@@ -112,6 +112,21 @@ window.onload = function () {
                     mui.openWindow({
                         url:'comments-detail.html'
                     })
+                },
+                sendToFriend:function () {
+                    //发给好友
+                },
+                generateCard:function () {
+                    mui('#share-sheet').popover('toggle');
+                    //生成卡片
+                    this.isShowCard = true;
+                },
+                hidePreview:function () {
+                    //关闭图片预览
+                    this.isShowCard = false;
+                },
+                saveImg:function () {
+
                 }
             },
             watch: {
@@ -166,4 +181,4 @@ window.onload = function () {
     document.querySelector('.emoji-wysiwyg-editor').addEventListener('input', function () {
         app.commentsContent = $(this).text();
     });
-};
+});
