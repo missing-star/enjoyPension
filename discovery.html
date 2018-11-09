@@ -110,8 +110,8 @@
             </div>
         </div>
         <!--搜索内容展示-->
-        <div @click="goInner(item.id)" class="search-content-container search-section" :class="{active:!isInput}">
-            <div v-for="item in searchList" class="tab-content-item">
+        <div class="search-content-container search-section" :class="{active:!isInput}">
+            <div @click="goInner(item.id)" v-for="item in searchList" class="tab-content-item">
                 <div class="img-container">
                     <div class="class-label">
                         <img src="img/home/label.png"/>
