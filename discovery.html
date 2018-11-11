@@ -6,7 +6,6 @@
     <script type="text/javascript" src="js/loader.js"></script>
     <link rel="stylesheet" href="css/home.css"/>
     <link rel="stylesheet" href="css/discovery.css"/>
-    <script type="text/javascript" src="js/discovery.js"></script>
 </head>
 <body>
 <div id="app">
@@ -20,10 +19,53 @@
         </header>
         <div class="mui-content">
             <!--
-                图片
+                轮播图
             -->
-            <div class="img-container">
-                <img src="img/show.jpg"/>
+            <div id="slider" class="mui-slider" >
+                <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="img/slider/yuantiao.jpg">
+                        </a>
+                    </div>
+                    <!-- 第一张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/shuijiao.jpg">
+                        </a>
+                    </div>
+                    <!-- 第二张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/muwu.jpg">
+                        </a>
+                    </div>
+                    <!-- 第三张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/cbd.jpg">
+                        </a>
+                    </div>
+                    <!-- 第四张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/yuantiao.jpg">
+                        </a>
+                    </div>
+                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="img/slider/shuijiao.jpg">
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                    <div class="mui-indicator"></div>
+                    <div class="mui-indicator"></div>
+                </div>
             </div>
             <!--
                 选项卡
@@ -69,7 +111,7 @@
            描述：底部导航栏
         -->
         <nav class="mui-bar mui-bar-tab">
-            <a class="mui-tab-item" href="home.html">
+            <a class="mui-tab-item" href="javascript:;" onclick="openWindow('home.html')">
                 <img src="img/course.png"/>
                 <span class="mui-tab-label">课程</span>
             </a>
@@ -77,7 +119,7 @@
                 <img src="img/discovery-active.png"/>
                 <span class="mui-tab-label">发现</span>
             </a>
-            <a class="mui-tab-item" href="person-home.html">
+            <a class="mui-tab-item" href="javascript:;" onclick="openWindow('person-home.html')">
                 <img src="img/my.png"/>
                 <span class="mui-tab-label">我的</span>
             </a>
@@ -129,5 +171,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="assets/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="assets/mui/js/mui.min.js"></script>
+<script type="text/javascript" src="assets/vue/vue.min.js"></script>
+<script type="text/javascript" src="js/discovery.js"></script>
 </body>
 </html>

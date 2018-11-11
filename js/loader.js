@@ -29,27 +29,6 @@ cssList.forEach(function (link, index) {
     document.querySelector('head').appendChild(linkNode);
 });
 
-/**
- * 加载js脚本
- */
-jsList.forEach(function (src, index) {
-    let jsNode = document.createElement('script');
-    jsNode.src = src;
-    jsNode.type = 'text/javascript';
-    document.querySelector('head').appendChild(jsNode);
-    if(jsNode.src.indexOf('version') != -1) {
-        jsNode.onload = function () {
-            mui('body').on('tap','a.mui-tab-item',function () {
-                if(this.href != 'javascript:;') {
-                    mui.openWindow({
-                        url:this.href
-                    })
-                }
-            })
-        }
-    }
-});
-
 
 function openWindow(url) {
     window.location.href = url;
