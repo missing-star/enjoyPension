@@ -24,26 +24,50 @@
             -->
             <div id="slider" class="mui-slider" >
                 <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
                     <div class="mui-slider-item mui-slider-item-duplicate">
                         <a href="#">
-                            <img :src="imgList[imgList.length - 1]">
+                            <img src="img/slider/yuantiao.jpg">
                         </a>
                     </div>
-                    <div v-for="(src,index) in imgList" class="mui-slider-item" :class="{'mui-active':index == 0}">
+                    <!-- 第一张 -->
+                    <div class="mui-slider-item">
                         <a href="#">
-                            <img :src="src">
+                            <img src="img/slider/shuijiao.jpg">
                         </a>
                     </div>
+                    <!-- 第二张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/muwu.jpg">
+                        </a>
+                    </div>
+                    <!-- 第三张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/cbd.jpg">
+                        </a>
+                    </div>
+                    <!-- 第四张 -->
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="img/slider/yuantiao.jpg">
+                        </a>
+                    </div>
+                    <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
                     <div class="mui-slider-item mui-slider-item-duplicate">
                         <a href="#">
-                            <img :src="imgList[0]">
+                            <img src="img/slider/shuijiao.jpg">
                         </a>
                     </div>
                 </div>
                 <div class="mui-slider-indicator">
-                    <div v-for="n in imgList.length" class="mui-indicator" :class="{'mui-active':n == 1}"></div>
+                    <div class="mui-indicator mui-active"></div>
+                    <div class="mui-indicator"></div>
+                    <div class="mui-indicator"></div>
+                    <div class="mui-indicator"></div>
                 </div>
-            </div></div>
+            </div>
             <!--
                 选项卡
             -->

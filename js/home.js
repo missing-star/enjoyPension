@@ -2,8 +2,6 @@ let set = new Set(JSON.parse(localStorage.getItem('history-home')));
 let app = new Vue({
     el: '#app',
     data: {
-        //图片列表
-        imgList: [],
         //选中的选项卡
         activeIndex: 0,
         //选项卡
@@ -177,16 +175,8 @@ let app = new Vue({
         }
     },
     created: function () {
-        let vm = this;
         //获取第一个tab页内容
         this.getItemList(this.tabList[0].id);
-        $.ajax({
-            url:'data/imgs.json',
-            async:false,
-            success:function () {
-                vm.imgList = ['img/slider/yuantiao.jpg', 'img/slider/shuijiao.jpg'];
-            }
-        })
     }
 });
 /**
