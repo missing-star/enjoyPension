@@ -198,3 +198,7 @@ $(window).scroll(function () {
         document.getElementById("tab-container").classList.remove("fixed");
     }
 });
+let slider = mui("#slider");
+slider.slider({
+    interval: 2000
+});
