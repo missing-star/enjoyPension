@@ -1,5 +1,5 @@
-let set = new Set(JSON.parse(localStorage.getItem('history-home')));
-let app = new Vue({
+var set = new Set(JSON.parse(localStorage.getItem('history-home')));
+var app = new Vue({
     el: '#app',
     data: {
         //选中的选项卡
@@ -65,7 +65,7 @@ let app = new Vue({
         //手动改变值变化
         tabContentTracker: 0,
         //历史记录
-        historyList: Array.from(set),
+        historyList: Array.prototype.slice.call(set),
         //搜索的关键字
         searchKeys: '',
         //显示的页面标记
@@ -79,13 +79,13 @@ let app = new Vue({
             this.getItemList(tabId);
         },
         getItemList: function (tabId) {
-            let vm = this;
+            var vm = this;
             if (vm.tabContent.get(tabId)) {
                 return vm.tabContent.get(tabId);
             }
             else {
                 //请求获取数据
-                let list = [
+                var list = [
                     {
                         "id": 0,
                         "type": 0,
@@ -183,11 +183,11 @@ let app = new Vue({
  * 固定tab
  */
     //获取 id="course_container" 元素，offsetTop是当前元素·距离网页窗口顶部的距离
-let offset_top = document.getElementById("tab-container").offsetTop;
-let isSetHeight = false;
+var offset_top = document.getElementById("tab-container").offsetTop;
+var isSetHeight = false;
 $(window).scroll(function () {
     //获取垂直滚动的距离（scrollTop()是从顶部开始滚动产生的距离）
-    let scroll_top = $(document).scrollTop();
+    var scroll_top = $(document).scrollTop();
     //防止重复设置高度页面抖动
     if (scroll_top > offset_top) {
         // 到达顶部位置，动态的添加元素属性，并给元素添加相应的元素样式
@@ -203,7 +203,7 @@ $(window).scroll(function () {
 function openWindow(url) {
     window.location.href = url;
 }
-let slider = mui("#slider");
+var slider = mui("#slider");
 slider.slider({
     interval: 2000
 });
